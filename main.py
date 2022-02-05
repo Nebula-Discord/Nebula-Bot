@@ -29,10 +29,11 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+  msg = message.content
   if message.author == client.user:
     return
 
-    msg = message.content
+    
 
   if message.content.startswith('$quote'):
     quote = random_quote()
