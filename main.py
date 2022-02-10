@@ -4,6 +4,8 @@ import requests
 import random
 import json
 from replit import db
+from keep_alive import keep_alive
+
 #starts discord
 client = discord.Client()
 print('Logged in')
@@ -119,10 +121,6 @@ async def on_message(message):
     await send('$quote - Gets a random inspirational quote')
     await send('$dailyquote - Gets the daily quote')
     await send('$youtube <Video Link> - Gets stats about the video including publish date, likes and dislikes, and views')
-    
-    
-    
-    
-    
 
+keep_alive()
 client.run(os.getenv('TOKEN'))
